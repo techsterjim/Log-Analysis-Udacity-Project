@@ -1,0 +1,16 @@
+Top Three Articles by Page View
+
+Bad things gone, say good people - 170098
+Balloon goons doomed - 84557
+Bears love berries, alleges bear - 253801
+
+Most Popular Authors Based on Total Article Views
+
+Ursula La Multa - 507594
+Rudolf von Treppenwitz - 423457
+Anonymous Contributor - 170098
+Markoff Chaney - 84557
+
+Days Where Errors Exceeded 1% of Total Views
+
+2016-07-17 - 2.26268624680273
