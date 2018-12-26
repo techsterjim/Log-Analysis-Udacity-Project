@@ -34,6 +34,7 @@ Run these commands from the terminal in the folder where your vagrant is install
 6. python3 newsdata.py to run the reporting tool.
 
 Views Used
+
 CREATE VIEW article_views AS SELECT substring(path, 10) AS articles, count(*) AS views
     FROM log
     WHERE status = '200 OK' AND path LIKE '%/article/%'
