@@ -30,4 +30,31 @@ Run these commands from the terminal in the folder where your vagrant is install
 2. vagrant ssh to log into the VM.
 3. cd /vagrant to change to your vagrant directory.
 4. psql -d news -f newsdata.sql to load the data and create the tables.
-5. python3 newsdata.py to run the reporting tool.
+5. create the views below
+6. python3 newsdata.py to run the reporting tool.
+
+Views Used
+CREATE VIEW article_views AS SELECT substring(path, 10) AS articles, count(*) AS views
+    FROM log
+    WHERE status = '200 OK' AND path LIKE '%/article/%'
+    GROUP BY articles
+    ORDER BY views desc;
+    
+ CREATE VIEW author_views AS SELECT articles.author, article_views.views
+    FROM articles, article_views
+    WHERE articles.slug = article_views.articles;
+    
+ CREATE VIEW request_errors AS SELECT date(time) AS date, count(*) AS errors
+    FROM log
+    WHERE status LIKE '%404%'
+    GROUP BY date
+    ORDER BY errors desc;
+    
+ CREATE VIEW total_requests AS SELECT date(time) AS date, count(*) AS requests
+    FROM log
+    GROUP BY date
+    ORDER BY requests desc;
+    
+ CREATE VIEW request_error_rate AS SELECT total_requests.date, request_errors.errors/total_requests.requests::float * 100 AS error_rate
+    FROM total_requests, request_errors
+    WHERE total_requests.date = request_errors.date;
