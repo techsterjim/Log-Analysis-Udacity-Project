@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-# Create a reporting tool that prints out reports (in plain text) 
-# based on the data in the database. 
-
+"""Create a reporting tool that prints out reports."""
 import psycopg2
+
 
 def connect():
     """Connect to the PostgreSQL database.  Returns a database connection."""
@@ -34,7 +33,7 @@ def popularAuthors():
     authors = c.fetchall()
     pg.close()
     for i in authors:
-        print ("%s - %s" % (i[0], i[1]))
+        print("%s - %s" % (i[0], i[1]))
 
 
 def errors():
@@ -48,6 +47,7 @@ def errors():
     pg.close()
     for i in errorList:
         print("%s - %s" % (i[0], i[1]))
+
 
 print("Top Three Articles by Page View")
 print("")
