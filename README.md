@@ -24,7 +24,7 @@ This project makes use of Udacity's Linux-based virtual machine (VM) configurati
 1. Download and install [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 2. Download and install [Vagrant](https://www.vagrantup.com/downloads.html).
 3. Select a folder on your PC from which you'd like to run the reporting tool.
-4. Fork and clone this repository into the folder you've just selected.
+4. Fork and clone [this](https://github.com/techsterjim/Log-Analysis-Udacity-Project.git) repository into the folder you've just selected.
 5. Download the `newsdata.sql` database file [here](https://www.dropbox.com/s/2g0si3zlylowwb9/newsdata.sql?dl=0) and move it to the folder you've selected. 
 
 ## How to run the project
